@@ -31,9 +31,9 @@
     }
 
     section{
-      max-width:980px;
-      margin:0 auto;
-      padding:80px 20px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 80px 20px;
       text-align:center;
     }
 
@@ -42,11 +42,7 @@
       font-weight:600;
     }
 
-    h2{
-      font-size:2.4rem;
-      margin-bottom:40px;
-    }
-
+    h2{font-size:2.4rem;margin-bottom:40px;}
     p{
       max-width:680px;
       margin:0 auto 18px;
@@ -56,22 +52,22 @@
 
     /* HERO */
     .hero-wrap{
-      max-width:980px;
-      margin:70px auto 22px;
-      padding:0 20px;
+      max-width: 980px;
+      margin: 70px auto 22px;
+      padding: 0 20px;
     }
     .hero-photo{
       position:relative;
       overflow:hidden;
-      border-radius:26px;
-      box-shadow:var(--shadow);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
       background:#fff;
     }
     .hero-photo img{
       width:100%;
       display:block;
       opacity:.35;
-      transform:scale(1.02);
+      transform: scale(1.02);
     }
     .hero-overlay{
       position:absolute;
@@ -84,7 +80,9 @@
       font-size:3.1rem;
       color:var(--text);
     }
-    .hero-overlay .sofi span{color:var(--accent);}
+    .hero-overlay .sofi span{
+      color:var(--accent);
+    }
 
     /* NOS CASAMOS */
     .nos-casamos{
@@ -92,48 +90,35 @@
       padding-bottom:18px;
     }
     .nos-casamos .title{
-      font-family:'Playfair Display',serif;
-      font-weight:600;
       color:var(--accent);
       font-size:3.1rem;
       margin-bottom:6px;
-      text-align:center;
     }
-
-    /* ✅ FECHA: mismo tamaño, negra y perfectamente centrada */
     .nos-casamos .date{
-      font-family:'Playfair Display',serif;
-      font-weight:600;
-      color:#000;
-      font-size:3.1rem;
-      margin:0 auto;
-      text-align:center;
-      width:100%;
+      font-size:1.05rem;
     }
 
-    /* ICONOS */
+    /* ICONOS PNG */
     .icon-pill{
-      width:64px;height:64px;
+      width:64px;
+      height:64px;
       border-radius:999px;
-      background:var(--accent-soft);
+      background: var(--accent-soft);
       display:flex;
       align-items:center;
       justify-content:center;
-      margin:0 auto 18px;
+      margin: 0 auto 18px;
     }
-    .icon-pill svg{
-      width:28px;height:28px;
-      stroke:var(--accent);
-      fill:none;
-      stroke-width:1.8;
-      stroke-linecap:round;
-      stroke-linejoin:round;
+    .icon-pill img{
+      width:32px;
+      height:32px;
+      object-fit:contain;
     }
 
     /* CARDS */
     .cards{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap:34px;
       max-width:900px;
       margin:0 auto;
@@ -178,18 +163,6 @@
       font-size:.95rem;
     }
 
-    /* GALERÍA */
-    .gallery{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:22px;
-    }
-    .gallery img{
-      width:100%;
-      border-radius:16px;
-      box-shadow:0 12px 30px rgba(0,0,0,.06);
-    }
-
     footer{
       padding:70px 20px;
       text-align:center;
@@ -197,22 +170,17 @@
       font-size:.88rem;
     }
 
-    /* ✅ DÓNDE Y CUÁNDO EN ROSA */
-    .section-where h2{
-      color:var(--accent);
-    }
-
-    @media(max-width:820px){
-      .hero-overlay .sofi,
-      .nos-casamos .title,
-      .nos-casamos .date{font-size:2.5rem;}
+    @media (max-width:820px){
       .cards{grid-template-columns:1fr;}
+      .hero-overlay .sofi,
+      .nos-casamos .title{font-size:2.5rem;}
     }
   </style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <div class="hero-wrap">
   <div class="hero-photo">
     <img src="images/hero.jpg" alt="Sofi y Tato">
@@ -222,82 +190,73 @@
   </div>
 </div>
 
+<!-- NOS CASAMOS -->
 <section class="nos-casamos">
   <div class="title">¡Nos casamos!</div>
   <p class="date">1 de mayo de 2026</p>
 </section>
 
 <!-- DÓNDE Y CUÁNDO -->
-<section class="section-where" style="padding-top:30px;">
+<section style="padding-top:30px;">
   <h2>Dónde y cuándo</h2>
 
   <div class="cards">
+    <!-- CEREMONIA -->
     <div class="card">
       <div class="icon-pill">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 5v14"/><path d="M8.5 9h7"/>
-        </svg>
+        <img src="images/iglesia.png" alt="Ceremonia">
       </div>
       <h3>Ceremonia</h3>
-      <p>1 de mayo · <strong>15:00 hs</strong><br>Schoenstatt “Los Olmos”</p>
+      <p>1 de mayo de 2026 · <strong>15:00 hs</strong><br>Schoenstatt Sede “Los Olmos”</p>
       <a class="map-btn" href="#">📍 Ver ubicación</a>
     </div>
 
+    <!-- FIESTA -->
     <div class="card">
       <div class="icon-pill">
-        <svg viewBox="0 0 24 24">
-          <path d="M7 10h10"/><path d="M7 10v8h10v-8"/>
-        </svg>
+        <img src="images/fiesta.png" alt="Fiesta">
       </div>
       <h3>Fiesta</h3>
-      <p>1 de mayo · <strong>16:30 hs</strong><br>Fátima Home</p>
+      <p>1 de mayo de 2026 · <strong>16:30 hs</strong><br>Fátima Home</p>
       <a class="map-btn" href="#">📍 Ver ubicación</a>
     </div>
   </div>
 </section>
 
 <!-- RSVP -->
-<section>
+<section style="padding-top:10px;">
   <div class="cta-box">
     <div class="icon-pill">
-      <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/></svg>
+      <img src="images/rsvp.png" alt="RSVP">
     </div>
     <h2>RSVP</h2>
-    <a class="button" href="#">Confirmar asistencia</a>
+    <a class="button" href="PEGAR_LINK_DE_GOOGLE_FORM" target="_blank">
+      Confirmar asistencia
+    </a>
   </div>
 </section>
 
 <!-- REGALOS -->
-<section>
+<section style="padding-top:0;">
   <div class="cta-box">
     <div class="icon-pill">
-      <svg viewBox="0 0 24 24"><path d="M4 10h16v10H4z"/></svg>
+      <img src="images/regalos.png" alt="Regalos">
     </div>
     <h2>Regalos</h2>
-    <p>Tu presencia es el regalo más importante.</p>
+    <p>Tu presencia es el regalo más importante. Si deseás ayudarnos, podés hacerlo desde nuestra lista.</p>
     <a class="button" href="regalos.html">Ver lista de regalos</a>
   </div>
 </section>
 
 <!-- MÚSICA -->
-<section>
+<section style="padding-top:0;">
   <div class="cta-box">
     <div class="icon-pill">
-      <svg viewBox="0 0 24 24"><path d="M10 18V6l8-2v12"/></svg>
+      <img src="images/musica.png" alt="Música">
     </div>
     <h2>Música</h2>
-    <p>Podés dejarnos temas que no pueden faltar.</p>
+    <p>Podés dejarnos temas que no pueden faltar en la fiesta.</p>
     <a class="button" href="#">Ir a la playlist</a>
-  </div>
-</section>
-
-<!-- FOTOS -->
-<section>
-  <h2>Fotos</h2>
-  <div class="gallery">
-    <img src="images/foto1.jpg">
-    <img src="images/foto2.jpg">
-    <img src="images/foto3.jpg">
   </div>
 </section>
 
