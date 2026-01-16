@@ -8,81 +8,69 @@
   <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#faf9f7;
-      --text:#2b2b2b;
-      --muted:#7a7a7a;
-      --accent:#d6a6a1;
-      --accent-soft: rgba(214,166,161,.18);
+      --bg-1:#f5f5f5;
+      --bg-2:#ffffff;
+      --text:#85a862;
+      --accent:#85a682;
       --card:#ffffff;
-      --shadow: 0 18px 45px rgba(0,0,0,.06);
-      --radius: 22px;
+      --shadow:0 18px 45px rgba(0,0,0,.05);
+      --radius:22px;
     }
 
     *{box-sizing:border-box;margin:0;padding:0;}
 
     body{
       font-family:'Inter',sans-serif;
-      background:var(--accent-soft); /* 👈 MISMO COLOR QUE LOS ICONOS */
+      background: linear-gradient(to bottom, var(--bg-1), var(--bg-2));
       color:var(--text);
       line-height:1.8;
     }
 
     section{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 60px 20px;
+      max-width:980px;
+      margin:0 auto;
+      padding:60px 20px;
       text-align:center;
     }
 
-    /* CAVEAT */
-    .script-font{
-      font-family:'Caveat', cursive;
+    /* TIPOGRAFÍA PRINCIPAL */
+    .title-font{
+      font-family:'Playfair Display', serif;
       font-weight:600;
-      letter-spacing:0.5px;
-    }
-
-    .uppercase{
-      text-transform: uppercase;
-    }
-
-    /* 🔥 ENGROSAR TRAZO */
-    .script-bold{
-      font-weight:700;
-      text-shadow:
-        0.4px 0 0 currentColor,
-       -0.4px 0 0 currentColor;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      color:var(--text);
+      text-align:center;
     }
 
     p{
-      color:var(--muted);
       font-size:1.05rem;
       margin:0;
     }
 
     /* HERO */
     .hero-wrap{
-      max-width: 980px;
-      margin: 70px auto 40px;
-      padding: 0 20px;
+      max-width:980px;
+      margin:70px auto 40px;
+      padding:0 20px;
     }
 
     .hero-photo{
       position:relative;
       overflow:hidden;
-      border-radius: 26px;
-      box-shadow: var(--shadow);
+      border-radius:26px;
+      box-shadow:var(--shadow);
       background:#fff;
     }
 
     .hero-photo img{
       width:100%;
       display:block;
-      opacity:.35;
-      transform: scale(1.02);
+      opacity:.25;
     }
 
     .hero-overlay{
@@ -92,47 +80,48 @@
       flex-direction:column;
       align-items:center;
       justify-content:center;
+      text-align:center;
+    }
+
+    .hero-overlay .sofi,
+    .hero-overlay .date{
+      width:100%;
+      text-align:center;
     }
 
     .hero-overlay .sofi{
-      font-size:8.4rem;
-      line-height:0.95;
-      color:var(--text);
+      font-size:8rem;
+      line-height:.95;
     }
 
     .hero-overlay .date{
-      margin-top:14px;
-      font-size:3.2rem;
-      line-height:1;
-      color:var(--text);
-    }
-
-    .hero-overlay span{
-      color:var(--accent);
+      margin-top:12px;
+      font-size:3rem;
     }
 
     /* ICONOS */
     .icon-pill{
       width:64px;
       height:64px;
-      border-radius:999px;
-      background: var(--accent-soft);
+      border-radius:50%;
+      background:#ffffff;
+      border:2px solid var(--accent);
       display:flex;
       align-items:center;
       justify-content:center;
-      margin: 0 auto 18px;
+      margin:0 auto 18px;
     }
 
     .icon-pill img{
-      width:32px;
-      height:32px;
+      width:34px;
+      height:34px;
       object-fit:contain;
     }
 
     /* CARDS */
     .cards{
       display:grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns:repeat(2,1fr);
       gap:34px;
       max-width:900px;
       margin:0 auto;
@@ -145,19 +134,21 @@
       padding:44px 34px;
     }
 
-    /* BOTÓN UBICACIÓN */
-    .map-btn{
+    /* BOTONES */
+    .map-btn,
+    .button{
       display:inline-block;
       margin-top:22px;
-      padding:12px 26px;
+      padding:12px 28px;
       border-radius:999px;
-      border:1px solid var(--accent);
-      color:var(--accent);
+      border:2px solid var(--accent);
+      color:var(--text);
       text-decoration:none;
-      font-size:.92rem;
+      background:transparent;
+      font-size:.95rem;
     }
 
-    /* CTA */
+    /* CTA BOX */
     .cta-box{
       max-width:900px;
       margin:0 auto;
@@ -167,21 +158,13 @@
       padding:64px 30px;
     }
 
-    .button{
-      display:inline-block;
-      padding:14px 34px;
-      border-radius:999px;
-      background:var(--accent);
-      color:#fff;
-      text-decoration:none;
-      font-size:.95rem;
-    }
-
     footer{
       padding:50px 20px 70px;
       text-align:center;
-      color:var(--muted);
-      font-size:.88rem;
+      font-size:.9rem;
+      font-family:'Playfair Display', serif;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
     }
 
     @media (max-width:820px){
@@ -199,8 +182,8 @@
   <div class="hero-photo">
     <img src="images/hero.jpg" alt="Sofi y Tato">
     <div class="hero-overlay">
-      <div class="sofi script-font">Sofi <span>&</span> Tato</div>
-      <div class="date script-font">01.05.26</div>
+      <div class="sofi title-font">Sofi & Tato</div>
+      <div class="date title-font">01.05.26</div>
     </div>
   </div>
 </div>
@@ -213,11 +196,10 @@
       <div class="icon-pill">
         <img src="images/iglesia.png" alt="Ceremonia">
       </div>
-      <h3 class="script-font uppercase script-bold">Ceremonia</h3>
+      <h3 class="title-font">Ceremonia</h3>
       <p>Schoenstatt Sede “Los Olmos”<br><strong>15:00 hs</strong></p>
-      <a class="map-btn"
-         href="https://www.google.com/maps?rlz=1C1VDKB_enAR1162AR1162&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGDkyBggCEEUYOzIOCAMQABgKGAsYsQMYgAQyCwgEEAAYChgLGIAEMgsIBRAAGAoYCxiABDIRCAYQLhgKGAsYrwEYxwEYgAQyCwgHEAAYChgLGIAEMgsICBAAGAoYCxiABDIRCAkQLhgKGAsYrwEYxwEYgATSAQgxNjQ4ajBqN6gCALACAA&um=1&ie=UTF-8&fb=1&gl=ar&sa=X&geocode=KUe6Ek0wg7yVMcYTcM9WaBWL&daddr=Ra%C3%BAl+Alfons%C3%ADn,+B1629+Pilar,+Provincia+de+Buenos+Aires"
-         target="_blank">
+      <a class="map-btn" target="_blank"
+        href="https://www.google.com/maps?daddr=Raúl+Alfonsín,+Pilar">
         Ver ubicación
       </a>
     </div>
@@ -226,11 +208,10 @@
       <div class="icon-pill">
         <img src="images/fiesta.png" alt="Fiesta">
       </div>
-      <h3 class="script-font uppercase script-bold">Fiesta</h3>
+      <h3 class="title-font">Fiesta</h3>
       <p>Fátima Home<br><strong>16:30 hs</strong></p>
-      <a class="map-btn"
-         href="https://www.google.com/maps?rlz=1C1VDKB_enAR1162AR1162&um=1&ie=UTF-8&fb=1&gl=ar&sa=X&geocode=KaluZMO8fbuVMcFh5w0ZB08u&daddr=Del+Aro+1840,+B1633+Fatima,+Provincia+de+Buenos+Aires"
-         target="_blank">
+      <a class="map-btn" target="_blank"
+        href="https://www.google.com/maps?daddr=Del+Aro+1840,+Fatima">
         Ver ubicación
       </a>
     </div>
@@ -244,10 +225,21 @@
     <div class="icon-pill">
       <img src="images/rsvp.png" alt="RSVP">
     </div>
-    <h2 class="script-font uppercase script-bold">RSVP</h2>
+    <h2 class="title-font">RSVP</h2>
     <a class="button" href="PEGAR_LINK_DE_GOOGLE_FORM" target="_blank">
       Confirmar asistencia
     </a>
+  </div>
+</section>
+
+<!-- DRESSCODE -->
+<section style="padding-top:20px;">
+  <div class="cta-box">
+    <div class="icon-pill">
+      <img src="images/drescode.png" alt="Dresscode">
+    </div>
+    <h2 class="title-font">Dresscode</h2>
+    <p><strong>Formal (sin corbata)</strong><br>No te olvides de traer abrigo extra</p>
   </div>
 </section>
 
@@ -257,12 +249,12 @@
     <div class="icon-pill">
       <img src="images/regalos.png" alt="Regalos">
     </div>
-    <h2 class="script-font uppercase script-bold">Regalos</h2>
+    <h2 class="title-font">Regalos</h2>
     <a class="button" href="regalos.html">Ver lista de regalos</a>
   </div>
 </section>
 
-<footer class="script-font">
+<footer>
   Sofi & Tato · 01.05.26
 </footer>
 
