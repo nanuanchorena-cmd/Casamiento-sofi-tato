@@ -2,13 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Sofi & Tato — ¡Nos casamos!</title>
+  <title>Sofi & Tato</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -23,9 +23,10 @@
     }
 
     *{box-sizing:border-box;margin:0;padding:0;}
+
     body{
       font-family:'Inter',sans-serif;
-      background:var(--bg);
+      background:var(--accent-soft); /* 👈 MISMO COLOR QUE LOS ICONOS */
       color:var(--text);
       line-height:1.8;
     }
@@ -33,29 +34,42 @@
     section{
       max-width: 980px;
       margin: 0 auto;
-      padding: 80px 20px;
+      padding: 60px 20px;
       text-align:center;
     }
 
-    h1,h2,h3{
-      font-family:'Playfair Display',serif;
+    /* CAVEAT */
+    .script-font{
+      font-family:'Caveat', cursive;
       font-weight:600;
+      letter-spacing:0.5px;
     }
 
-    h2{font-size:2.4rem;margin-bottom:40px;}
+    .uppercase{
+      text-transform: uppercase;
+    }
+
+    /* 🔥 ENGROSAR TRAZO */
+    .script-bold{
+      font-weight:700;
+      text-shadow:
+        0.4px 0 0 currentColor,
+       -0.4px 0 0 currentColor;
+    }
+
     p{
-      max-width:680px;
-      margin:0 auto 18px;
       color:var(--muted);
       font-size:1.05rem;
+      margin:0;
     }
 
     /* HERO */
     .hero-wrap{
       max-width: 980px;
-      margin: 70px auto 22px;
+      margin: 70px auto 40px;
       padding: 0 20px;
     }
+
     .hero-photo{
       position:relative;
       overflow:hidden;
@@ -63,42 +77,41 @@
       box-shadow: var(--shadow);
       background:#fff;
     }
+
     .hero-photo img{
       width:100%;
       display:block;
       opacity:.35;
       transform: scale(1.02);
     }
+
     .hero-overlay{
       position:absolute;
       inset:0;
       display:flex;
+      flex-direction:column;
       align-items:center;
       justify-content:center;
     }
+
     .hero-overlay .sofi{
-      font-size:3.1rem;
+      font-size:8.4rem;
+      line-height:0.95;
       color:var(--text);
     }
-    .hero-overlay .sofi span{
+
+    .hero-overlay .date{
+      margin-top:14px;
+      font-size:3.2rem;
+      line-height:1;
+      color:var(--text);
+    }
+
+    .hero-overlay span{
       color:var(--accent);
     }
 
-    /* NOS CASAMOS */
-    .nos-casamos{
-      padding-top:26px;
-      padding-bottom:18px;
-    }
-    .nos-casamos .title{
-      color:var(--accent);
-      font-size:3.1rem;
-      margin-bottom:6px;
-    }
-    .nos-casamos .date{
-      font-size:1.05rem;
-    }
-
-    /* ICONOS PNG */
+    /* ICONOS */
     .icon-pill{
       width:64px;
       height:64px;
@@ -109,6 +122,7 @@
       justify-content:center;
       margin: 0 auto 18px;
     }
+
     .icon-pill img{
       width:32px;
       height:32px;
@@ -123,6 +137,7 @@
       max-width:900px;
       margin:0 auto;
     }
+
     .card{
       background:var(--card);
       border-radius:var(--radius);
@@ -130,12 +145,11 @@
       padding:44px 34px;
     }
 
+    /* BOTÓN UBICACIÓN */
     .map-btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
+      display:inline-block;
       margin-top:22px;
-      padding:12px 20px;
+      padding:12px 26px;
       border-radius:999px;
       border:1px solid var(--accent);
       color:var(--accent);
@@ -146,7 +160,7 @@
     /* CTA */
     .cta-box{
       max-width:900px;
-      margin:40px auto 0;
+      margin:0 auto;
       background:var(--card);
       border-radius:28px;
       box-shadow:var(--shadow);
@@ -164,7 +178,7 @@
     }
 
     footer{
-      padding:70px 20px;
+      padding:50px 20px 70px;
       text-align:center;
       color:var(--muted);
       font-size:.88rem;
@@ -172,8 +186,8 @@
 
     @media (max-width:820px){
       .cards{grid-template-columns:1fr;}
-      .hero-overlay .sofi,
-      .nos-casamos .title{font-size:2.5rem;}
+      .hero-overlay .sofi{font-size:5rem;}
+      .hero-overlay .date{font-size:2rem;}
     }
   </style>
 </head>
@@ -185,51 +199,52 @@
   <div class="hero-photo">
     <img src="images/hero.jpg" alt="Sofi y Tato">
     <div class="hero-overlay">
-      <div class="sofi">Sofi <span>&</span> Tato</div>
+      <div class="sofi script-font">Sofi <span>&</span> Tato</div>
+      <div class="date script-font">01.05.26</div>
     </div>
   </div>
 </div>
 
-<!-- NOS CASAMOS -->
-<section class="nos-casamos">
-  <div class="title">¡Nos casamos!</div>
-  <p class="date">1 de mayo de 2026</p>
-</section>
-
-<!-- DÓNDE Y CUÁNDO -->
-<section style="padding-top:30px;">
-  <h2>Dónde y cuándo</h2>
-
+<!-- CEREMONIA / FIESTA -->
+<section style="padding-top:0;">
   <div class="cards">
-    <!-- CEREMONIA -->
+
     <div class="card">
       <div class="icon-pill">
         <img src="images/iglesia.png" alt="Ceremonia">
       </div>
-      <h3>Ceremonia</h3>
-      <p>1 de mayo de 2026 · <strong>15:00 hs</strong><br>Schoenstatt Sede “Los Olmos”</p>
-      <a class="map-btn" href="#">📍 Ver ubicación</a>
+      <h3 class="script-font uppercase script-bold">Ceremonia</h3>
+      <p>Schoenstatt Sede “Los Olmos”<br><strong>15:00 hs</strong></p>
+      <a class="map-btn"
+         href="https://www.google.com/maps?rlz=1C1VDKB_enAR1162AR1162&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGDkyBggCEEUYOzIOCAMQABgKGAsYsQMYgAQyCwgEEAAYChgLGIAEMgsIBRAAGAoYCxiABDIRCAYQLhgKGAsYrwEYxwEYgAQyCwgHEAAYChgLGIAEMgsICBAAGAoYCxiABDIRCAkQLhgKGAsYrwEYxwEYgATSAQgxNjQ4ajBqN6gCALACAA&um=1&ie=UTF-8&fb=1&gl=ar&sa=X&geocode=KUe6Ek0wg7yVMcYTcM9WaBWL&daddr=Ra%C3%BAl+Alfons%C3%ADn,+B1629+Pilar,+Provincia+de+Buenos+Aires"
+         target="_blank">
+        Ver ubicación
+      </a>
     </div>
 
-    <!-- FIESTA -->
     <div class="card">
       <div class="icon-pill">
         <img src="images/fiesta.png" alt="Fiesta">
       </div>
-      <h3>Fiesta</h3>
-      <p>1 de mayo de 2026 · <strong>16:30 hs</strong><br>Fátima Home</p>
-      <a class="map-btn" href="#">📍 Ver ubicación</a>
+      <h3 class="script-font uppercase script-bold">Fiesta</h3>
+      <p>Fátima Home<br><strong>16:30 hs</strong></p>
+      <a class="map-btn"
+         href="https://www.google.com/maps?rlz=1C1VDKB_enAR1162AR1162&um=1&ie=UTF-8&fb=1&gl=ar&sa=X&geocode=KaluZMO8fbuVMcFh5w0ZB08u&daddr=Del+Aro+1840,+B1633+Fatima,+Provincia+de+Buenos+Aires"
+         target="_blank">
+        Ver ubicación
+      </a>
     </div>
+
   </div>
 </section>
 
 <!-- RSVP -->
-<section style="padding-top:10px;">
+<section>
   <div class="cta-box">
     <div class="icon-pill">
       <img src="images/rsvp.png" alt="RSVP">
     </div>
-    <h2>RSVP</h2>
+    <h2 class="script-font uppercase script-bold">RSVP</h2>
     <a class="button" href="PEGAR_LINK_DE_GOOGLE_FORM" target="_blank">
       Confirmar asistencia
     </a>
@@ -237,31 +252,18 @@
 </section>
 
 <!-- REGALOS -->
-<section style="padding-top:0;">
+<section style="padding-top:20px;">
   <div class="cta-box">
     <div class="icon-pill">
       <img src="images/regalos.png" alt="Regalos">
     </div>
-    <h2>Regalos</h2>
-    <p>Tu presencia es el regalo más importante. Si deseás ayudarnos, podés hacerlo desde nuestra lista.</p>
+    <h2 class="script-font uppercase script-bold">Regalos</h2>
     <a class="button" href="regalos.html">Ver lista de regalos</a>
   </div>
 </section>
 
-<!-- MÚSICA -->
-<section style="padding-top:0;">
-  <div class="cta-box">
-    <div class="icon-pill">
-      <img src="images/musica.png" alt="Música">
-    </div>
-    <h2>Música</h2>
-    <p>Podés dejarnos temas que no pueden faltar en la fiesta.</p>
-    <a class="button" href="#">Ir a la playlist</a>
-  </div>
-</section>
-
-<footer>
-  Sofi & Tato · 1 de mayo de 2026
+<footer class="script-font">
+  Sofi & Tato · 01.05.26
 </footer>
 
 </body>
