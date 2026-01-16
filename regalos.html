@@ -8,43 +8,45 @@
   <!-- Tipografías -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <!-- PapaParse -->
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
   <style>
     :root {
-      --text: #2b2b2b;
-      --muted: #777;
-      --accent: #d6a6a1;
-      --accent-soft: rgba(214,166,161,.18); /* mismo rosa del index */
-      --card: #ffffff;
+      --bg:#f3f3f3;              /* 👈 MISMO FONDO QUE INDEX */
+      --text:#85a682;
+      --accent:#85a682;
+      --card:#ffffff;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--accent-soft); /* 👈 mismo fondo que index */
+      background: var(--bg);
       margin: 0;
       color: var(--text);
     }
 
     h1 {
-      font-family: 'Caveat', cursive;
+      font-family: 'Playfair Display', serif;
       text-align: center;
       margin: 100px 0 20px;
-      font-size: 3.2rem;
-      font-weight: 700;
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #85a682;
     }
 
     .subtitle {
-      font-family: 'Caveat', cursive;
+      font-family: 'Playfair Display', serif;
       text-align: center;
-      max-width: 640px;
+      max-width: 680px;
       margin: 0 auto 60px;
-      color: var(--text);
-      font-size: 1.4rem;
-      line-height: 1.6;
+      color: #85a682;
+      font-size: 1.1rem;
+      line-height: 1.8;
     }
 
     /* FILTERS */
@@ -54,19 +56,19 @@
     }
 
     .filters button {
-      border: none;
-      background: #eee;
+      border: 2px solid #85a682;
+      background: transparent;
       padding: 10px 22px;
       margin: 6px;
       border-radius: 30px;
       cursor: pointer;
-      font-family: inherit;
+      font-family: 'Inter', sans-serif;
       font-size: .9rem;
+      color: #85a682;
     }
 
     .filters button.active {
-      background: var(--accent-soft);
-      color: var(--text);
+      background: #ffffff;
     }
 
     /* GRID */
@@ -81,7 +83,7 @@
 
     .card {
       background: var(--card);
-      border-radius: 16px;
+      border-radius: 18px;
       overflow: hidden;
       box-shadow: 0 10px 25px rgba(0,0,0,.05);
       display: flex;
@@ -103,11 +105,13 @@
 
     .card-content h3 {
       margin: 0 0 8px;
-      font-size: 1.15rem;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #2b2b2b;
     }
 
     .price {
-      color: var(--accent);
+      color: #85a682;
       font-weight: 600;
       margin-bottom: 18px;
     }
@@ -116,11 +120,12 @@
       margin-top: auto;
       width: 100%;
       padding: 12px;
-      border: none;
+      border: 2px solid #85a682;
       border-radius: 30px;
-      background: var(--accent-soft);
+      background: transparent;
       cursor: pointer;
       font-size: .95rem;
+      color: #85a682;
     }
 
     /* MODAL */
@@ -142,7 +147,7 @@
       background: white;
       width: 95%;
       max-width: 520px;
-      border-radius: 16px;
+      border-radius: 18px;
       overflow: hidden;
     }
 
@@ -158,10 +163,11 @@
 
     .modal-content h3 {
       margin-bottom: 10px;
+      font-weight: 500;
     }
 
     .modal-price {
-      color: var(--accent);
+      color: #85a682;
       font-weight: 600;
       margin-bottom: 20px;
       font-size: 1.2rem;
@@ -173,7 +179,7 @@
       border-radius: 12px;
       margin-bottom: 16px;
       font-size: .9rem;
-      color: var(--muted);
+      color: #555;
     }
 
     .modal-actions {
@@ -197,7 +203,7 @@
     }
 
     .confirm {
-      background: var(--accent);
+      background: #85a682;
       color: white;
     }
   </style>
@@ -231,14 +237,15 @@
 
       <div class="bank-box">
         <strong>Cuenta en ARS</strong><br>
-        Alias: sofi.tato.boda<br>
-        Banco: XXXX
+        Alias: sofiytato.ars<br>
+        Banco: BBVA
+        CBU:0170023740000004163457
       </div>
 
       <div class="bank-box">
         <strong>Cuenta en USD</strong><br>
-        Alias: sofi.tato.usd<br>
-        Banco: XXXX
+        Alias: sofiytato.usd<br>
+        CBU: 0170023744000061531611
       </div>
     </div>
 
@@ -253,7 +260,7 @@
 const SHEET_URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQlgOl6z03yvVVdRTEDSDhKCOlO4axbcB02j9_0Y4uNKby_SCov9mViZORrqBO7diQ_E79EGcxvo-oA/pub?output=csv";
 
-const GOOGLE_FORM_URL = "PEGAR_ACA_TU_GOOGLE_FORM";
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc7JTqLk2OM59i0mGgA_HmamxGlPGHn6hyti3PiFNisQagvbA/viewform";
 
 let items = [];
 
@@ -286,7 +293,6 @@ function render(list) {
 function filterCat(cat, btn) {
   document.querySelectorAll(".filters button").forEach(b => b.classList.remove("active"));
   btn.classList.add("active");
-
   render(cat === "all" ? items : items.filter(i => i.Categoria === cat));
 }
 
