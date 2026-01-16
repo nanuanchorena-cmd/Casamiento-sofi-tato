@@ -15,7 +15,7 @@
 
   <style>
     :root {
-      --bg:#f3f3f3;              /* 👈 MISMO FONDO QUE INDEX */
+      --bg:#f3f3f3;
       --text:#85a682;
       --accent:#85a682;
       --card:#ffffff;
@@ -147,12 +147,17 @@
       background: white;
       width: 95%;
       max-width: 520px;
+      max-height: 85vh;
       border-radius: 18px;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     .modal-content {
       padding: 24px;
+      overflow-y: auto;
+      flex: 1;
     }
 
     .modal-content img {
@@ -180,6 +185,7 @@
       margin-bottom: 16px;
       font-size: .9rem;
       color: #555;
+      word-break: break-word;
     }
 
     .modal-actions {
@@ -187,6 +193,7 @@
       gap: 10px;
       padding: 20px;
       border-top: 1px solid #eee;
+      background: white;
     }
 
     .modal-actions button {
@@ -238,8 +245,8 @@
       <div class="bank-box">
         <strong>Cuenta en ARS</strong><br>
         Alias: sofiytato.ars<br>
-        Banco: BBVA
-        CBU:0170023740000004163457
+        Banco: BBVA<br>
+        CBU: 0170023740000004163457
       </div>
 
       <div class="bank-box">
@@ -260,7 +267,8 @@
 const SHEET_URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQlgOl6z03yvVVdRTEDSDhKCOlO4axbcB02j9_0Y4uNKby_SCov9mViZORrqBO7diQ_E79EGcxvo-oA/pub?output=csv";
 
-const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc7JTqLk2OM59i0mGgA_HmamxGlPGHn6hyti3PiFNisQagvbA/viewform";
+const GOOGLE_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSc7JTqLk2OM59i0mGgA_HmamxGlPGHn6hyti3PiFNisQagvbA/viewform";
 
 let items = [];
 
