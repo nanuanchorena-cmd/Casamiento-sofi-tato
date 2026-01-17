@@ -5,48 +5,49 @@
   <title>Lista de Regalos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Tipografías -->
+  <!-- Tipografía Roboto -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <!-- PapaParse -->
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 
   <style>
     :root {
-      --bg:#f3f3f3;
+      --bg:#545454; /* mismo gris que index */
       --text:#85a682;
       --accent:#85a682;
       --card:#ffffff;
     }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family:'Roboto', sans-serif;
       background: var(--bg);
       margin: 0;
       color: var(--text);
     }
 
     h1 {
-      font-family: 'Playfair Display', serif;
+      font-family:'Roboto', sans-serif;
       text-align: center;
       margin: 100px 0 20px;
-      font-size: 3rem;
-      font-weight: 600;
+      font-size: 2.6rem;
+      font-weight: 500;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #85a682;
+      color: var(--text);
     }
 
     .subtitle {
-      font-family: 'Playfair Display', serif;
+      font-family:'Roboto', sans-serif;
       text-align: center;
       max-width: 680px;
       margin: 0 auto 60px;
-      color: #85a682;
-      font-size: 1.1rem;
+      color: var(--text);
+      font-size: 1.05rem;
       line-height: 1.8;
+      font-weight: 300;
     }
 
     /* FILTERS */
@@ -56,15 +57,16 @@
     }
 
     .filters button {
-      border: 2px solid #85a682;
+      border: 2px solid var(--accent);
       background: transparent;
       padding: 10px 22px;
       margin: 6px;
       border-radius: 30px;
       cursor: pointer;
-      font-family: 'Inter', sans-serif;
+      font-family:'Roboto', sans-serif;
       font-size: .9rem;
-      color: #85a682;
+      color: var(--text);
+      font-weight: 400;
     }
 
     .filters button.active {
@@ -85,7 +87,7 @@
       background: var(--card);
       border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0,0,0,.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
       display: flex;
       flex-direction: column;
     }
@@ -111,7 +113,7 @@
     }
 
     .price {
-      color: #85a682;
+      color: var(--text);
       font-weight: 600;
       margin-bottom: 18px;
     }
@@ -120,19 +122,20 @@
       margin-top: auto;
       width: 100%;
       padding: 12px;
-      border: 2px solid #85a682;
+      border: 2px solid var(--accent);
       border-radius: 30px;
       background: transparent;
       cursor: pointer;
       font-size: .95rem;
-      color: #85a682;
+      color: var(--text);
+      font-family:'Roboto', sans-serif;
     }
 
     /* MODAL */
     .modal {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,.4);
+      background: rgba(0,0,0,.45);
       display: none;
       align-items: center;
       justify-content: center;
@@ -158,6 +161,7 @@
       padding: 24px;
       overflow-y: auto;
       flex: 1;
+      font-family:'Roboto', sans-serif;
     }
 
     .modal-content img {
@@ -172,7 +176,7 @@
     }
 
     .modal-price {
-      color: #85a682;
+      color: var(--text);
       font-weight: 600;
       margin-bottom: 20px;
       font-size: 1.2rem;
@@ -203,6 +207,7 @@
       border: none;
       cursor: pointer;
       font-size: .9rem;
+      font-family:'Roboto', sans-serif;
     }
 
     .cancel {
@@ -210,7 +215,7 @@
     }
 
     .confirm {
-      background: #85a682;
+      background: var(--accent);
       color: white;
     }
   </style>
