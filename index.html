@@ -12,9 +12,9 @@
 
   <style>
     :root{
-      --bg:#f4f4f2;        /* 👈 gris tiza claro */
-      --text:#545454;      /* 👈 color texto */
-      --accent:#85a682;
+      --bg:#ffffff;        /* 👈 fondo blanco */
+      --text:#545454;
+      --accent:#545454;    /* 👈 color de líneas de botones */
       --card:#ffffff;
       --shadow:0 18px 45px rgba(0,0,0,.12);
       --radius:22px;
@@ -36,24 +36,14 @@
       text-align:center;
     }
 
-    /* TIPOGRAFÍA PRINCIPAL */
     .title-font{
-      font-family:'Roboto', sans-serif;
       font-weight:500;
       letter-spacing:0.18em;
       text-transform:uppercase;
       color:var(--text);
-      text-align:center;
     }
 
-    p{
-      font-size:1.05rem;
-      color:var(--text);
-    }
-
-    h2, h3{
-      color:var(--text);
-    }
+    p{font-size:1.05rem;}
 
     /* HERO */
     .hero-wrap{
@@ -88,11 +78,21 @@
 
     .hero-overlay .sofi{
       font-size:4rem;
-      line-height:1;
+      line-height:1.1;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+    }
+
+    .hero-overlay .sofi .amp{
+      font-size:2.2rem;
+      margin:6px 0;
+      font-weight:300;
+      letter-spacing:0.1em;
     }
 
     .hero-overlay .date{
-      margin-top:12px;
+      margin-top:14px;
       font-size:2rem;
     }
 
@@ -129,7 +129,6 @@
       border-radius:var(--radius);
       box-shadow:var(--shadow);
       padding:44px 34px;
-      color:var(--text);
     }
 
     /* BOTONES */
@@ -139,7 +138,7 @@
       margin-top:22px;
       padding:12px 28px;
       border-radius:999px;
-      border:2px solid var(--accent);
+      border:2px solid #545454; /* 👈 líneas gris */
       color:var(--text);
       text-decoration:none;
       background:transparent;
@@ -154,7 +153,6 @@
       border-radius:28px;
       box-shadow:var(--shadow);
       padding:64px 30px;
-      color:var(--text);
     }
 
     footer{
@@ -169,6 +167,7 @@
     @media (max-width:820px){
       .cards{grid-template-columns:1fr;}
       .hero-overlay .sofi{font-size:3rem;}
+      .hero-overlay .sofi .amp{font-size:1.8rem;}
       .hero-overlay .date{font-size:1.6rem;}
     }
   </style>
@@ -176,78 +175,59 @@
 
 <body>
 
-<!-- HERO -->
 <div class="hero-wrap">
   <div class="hero-photo">
     <img src="images/hero.jpg" alt="Sofi y Tato">
     <div class="hero-overlay">
-      <div class="sofi title-font">Sofi & Tato</div>
+      <div class="sofi title-font">
+        <span>Sofi</span>
+        <span class="amp">&</span>
+        <span>Tato</span>
+      </div>
       <div class="date title-font">01.05.26</div>
     </div>
   </div>
 </div>
 
-<!-- CEREMONIA / FIESTA -->
 <section style="padding-top:0;">
   <div class="cards">
-
     <div class="card">
-      <div class="icon-pill">
-        <img src="images/iglesia.png" alt="Ceremonia">
-      </div>
+      <div class="icon-pill"><img src="images/iglesia.png"></div>
       <h3 class="title-font">Ceremonia</h3>
       <p>Schoenstatt Sede “Los Olmos”<br><strong>15:00 hs</strong></p>
-      <a class="map-btn" target="_blank"
-        href="https://www.google.com/maps?daddr=Raúl+Alfonsín,+Pilar">
-        Ver ubicación
-      </a>
+      <a class="map-btn" target="_blank" href="https://www.google.com/maps?daddr=Raúl+Alfonsín,+Pilar">Ver ubicación</a>
     </div>
 
     <div class="card">
-      <div class="icon-pill">
-        <img src="images/fiesta.png" alt="Fiesta">
-      </div>
+      <div class="icon-pill"><img src="images/fiesta.png"></div>
       <h3 class="title-font">Fiesta</h3>
       <p>Fátima Home<br><strong>16:30 hs</strong></p>
-      <a class="map-btn" target="_blank"
-        href="https://www.google.com/maps?daddr=Del+Aro+1840,+Fatima">
-        Ver ubicación
-      </a>
+      <a class="map-btn" target="_blank" href="https://www.google.com/maps?daddr=Del+Aro+1840,+Fatima">Ver ubicación</a>
     </div>
-
   </div>
 </section>
 
-<!-- RSVP -->
 <section>
   <div class="cta-box">
-    <div class="icon-pill">
-      <img src="images/rsvp.png" alt="RSVP">
-    </div>
+    <div class="icon-pill"><img src="images/rsvp.png"></div>
     <h2 class="title-font">RSVP</h2>
-    <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSeGdi-MMfEvgAvV8WxHjekEn0easfZk9jB5zv5y61VHQwcDnQ/viewform" target="_blank">
+    <a class="button" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeGdi-MMfEvgAvV8WxHjekEn0easfZk9jB5zv5y61VHQwcDnQ/viewform">
       Confirmar asistencia
     </a>
   </div>
 </section>
 
-<!-- DRESSCODE -->
 <section style="padding-top:20px;">
   <div class="cta-box">
-    <div class="icon-pill">
-      <img src="images/drescode.png" alt="Dresscode">
-    </div>
+    <div class="icon-pill"><img src="images/drescode.png"></div>
     <h2 class="title-font">Dresscode</h2>
     <p><strong>Formal (sin corbata)</strong><br>No te olvides de traer abrigo extra</p>
   </div>
 </section>
 
-<!-- REGALOS -->
 <section style="padding-top:20px;">
   <div class="cta-box">
-    <div class="icon-pill">
-      <img src="images/regalos.png" alt="Regalos">
-    </div>
+    <div class="icon-pill"><img src="images/regalos.png"></div>
     <h2 class="title-font">Regalos</h2>
     <a class="button" href="regalos.html">Ver lista de regalos</a>
   </div>

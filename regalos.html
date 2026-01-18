@@ -15,9 +15,9 @@
 
   <style>
     :root {
-      --bg:#545454; /* mismo gris que index */
-      --text:#85a682;
-      --accent:#85a682;
+      --bg:#fafafa;        /* 👈 MISMO FONDO QUE INDEX */
+      --text:#545454;
+      --accent:#545454;
       --card:#ffffff;
     }
 
@@ -29,22 +29,18 @@
     }
 
     h1 {
-      font-family:'Roboto', sans-serif;
       text-align: center;
       margin: 100px 0 20px;
       font-size: 2.6rem;
       font-weight: 500;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--text);
     }
 
     .subtitle {
-      font-family:'Roboto', sans-serif;
       text-align: center;
       max-width: 680px;
       margin: 0 auto 60px;
-      color: var(--text);
       font-size: 1.05rem;
       line-height: 1.8;
       font-weight: 300;
@@ -63,10 +59,9 @@
       margin: 6px;
       border-radius: 30px;
       cursor: pointer;
-      font-family:'Roboto', sans-serif;
       font-size: .9rem;
       color: var(--text);
-      font-weight: 400;
+      font-family:'Roboto', sans-serif;
     }
 
     .filters button.active {
@@ -109,11 +104,9 @@
       margin: 0 0 8px;
       font-size: 1.05rem;
       font-weight: 500;
-      color: #2b2b2b;
     }
 
     .price {
-      color: var(--text);
       font-weight: 600;
       margin-bottom: 18px;
     }
@@ -147,7 +140,7 @@
     }
 
     .modal-box {
-      background: white;
+      background: #ffffff;
       width: 95%;
       max-width: 520px;
       max-height: 85vh;
@@ -161,7 +154,6 @@
       padding: 24px;
       overflow-y: auto;
       flex: 1;
-      font-family:'Roboto', sans-serif;
     }
 
     .modal-content img {
@@ -176,7 +168,6 @@
     }
 
     .modal-price {
-      color: var(--text);
       font-weight: 600;
       margin-bottom: 20px;
       font-size: 1.2rem;
@@ -188,7 +179,6 @@
       border-radius: 12px;
       margin-bottom: 16px;
       font-size: .9rem;
-      color: #555;
       word-break: break-word;
     }
 
@@ -197,7 +187,7 @@
       gap: 10px;
       padding: 20px;
       border-top: 1px solid #eee;
-      background: white;
+      background: #ffffff;
     }
 
     .modal-actions button {
@@ -208,15 +198,16 @@
       cursor: pointer;
       font-size: .9rem;
       font-family:'Roboto', sans-serif;
+      color: var(--text);
     }
 
     .cancel {
-      background: #eee;
+      background: #eeeeee;
     }
 
     .confirm {
       background: var(--accent);
-      color: white;
+      color: #ffffff;
     }
   </style>
 </head>
