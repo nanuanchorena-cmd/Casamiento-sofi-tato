@@ -15,7 +15,7 @@
 
   <style>
     :root {
-      --bg:#fafafa;        /* 👈 MISMO FONDO QUE INDEX */
+      --bg:#fafafa;
       --text:#545454;
       --accent:#545454;
       --card:#ffffff;
@@ -46,7 +46,6 @@
       font-weight: 300;
     }
 
-    /* FILTERS */
     .filters {
       text-align: center;
       margin-bottom: 60px;
@@ -61,14 +60,12 @@
       cursor: pointer;
       font-size: .9rem;
       color: var(--text);
-      font-family:'Roboto', sans-serif;
     }
 
     .filters button.active {
       background: #ffffff;
     }
 
-    /* GRID */
     .grid {
       max-width: 1200px;
       margin: 0 auto 120px;
@@ -121,7 +118,6 @@
       cursor: pointer;
       font-size: .95rem;
       color: var(--text);
-      font-family:'Roboto', sans-serif;
     }
 
     /* MODAL */
@@ -173,13 +169,32 @@
       font-size: 1.2rem;
     }
 
+    /* === BANK STRUCTURE === */
+    .bank-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+
     .bank-box {
       background: #f6f6f6;
       padding: 16px;
       border-radius: 12px;
-      margin-bottom: 16px;
       font-size: .9rem;
       word-break: break-word;
+    }
+
+    .bank-box strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .bank-note {
+      font-size: 0.8rem;
+      color: #777;
+      font-style: italic;
+      margin-top: 6px;
     }
 
     .modal-actions {
@@ -197,7 +212,6 @@
       border: none;
       cursor: pointer;
       font-size: .9rem;
-      font-family:'Roboto', sans-serif;
       color: var(--text);
     }
 
@@ -205,7 +219,6 @@
       background: #eeeeee;
     }
 
-    /* 👇 CORRECCIÓN */
     .modal-actions .confirm {
       background: var(--accent);
       color: #ffffff;
@@ -218,10 +231,9 @@
 <h1>Lista de Regalos</h1>
 
 <p class="subtitle">
-  
-¡Muchas gracias por acompañarnos en este día tan especial para nosotros! ❤️ 
-
-Para nuestra luna de miel nos vamos a Japón y Filipinas, y si querés hacernos un regalo, sería espectacular que nos ayudes a vivir alguna experiencia inolvidable durante el viaje.
+  ¡Muchas gracias por acompañarnos en este día tan especial para nosotros! ❤️<br>
+  Para nuestra luna de miel nos vamos a Japón y Filipinas, y si querés hacernos un regalo,
+  sería espectacular que nos ayudes a vivir alguna experiencia inolvidable durante el viaje.
 </p>
 
 <div class="filters">
@@ -241,39 +253,35 @@ Para nuestra luna de miel nos vamos a Japón y Filipinas, y si querés hacernos 
       <h3 id="modalTitle"></h3>
       <div class="modal-price" id="modalPrice"></div>
 
-      <div class="bank-box">
-        <strong>Cuenta en ARS</strong><br>
-        Alias: sofiytato.ars<br>
-        Banco: BBVA<br>
-        CBU: 0170023740000004163457
+      <div class="bank-grid">
+        <div class="bank-box">
+          <strong>Cuenta en ARS</strong>
+          Alias: sofiytato.ars<br>
+          Banco: BBVA<br>
+          CBU: 0170023740000004163457
+        </div>
+
+        <div class="bank-box">
+          <strong>Cuenta en USD</strong>
+          Alias: sofiytato.usd<br>
+          Banco: BBVA<br>
+          CBU: 0170023744000061531611
+        </div>
+
+        <div class="bank-box">
+          <strong>Cuenta en USD (opción alternativa)</strong>
+          Titular: Ignacio Javier Alvarez Ferro<br>
+          Número de cuenta: 213565950469<br>
+          Número de ruta: 101019644<br>
+          Tipo de cuenta: Personal checking<br>
+          Banco: Lead Bank
+        </div>
       </div>
 
-<div class="bank-box">
-  <strong>Cuenta en USD</strong><br>
-  Alias: sofiytato.usd<br>
-  Banco: BBVA<br>
-  CBU: 0170023744000061531611
-</div>
-
-<div class="bank-box">
-  <strong>Cuenta en USD (opción alternativa)</strong><br>
-  Titular de la cuenta: Ignacio Javier Alvarez Ferro<br>
-  Númro de cuenta: 213565950469<br>
-  Número de ruta: 101019644<br>
-  Tipo de cuenta: Personal checking<br>
-  Nombre y dirección del banco: Lead Bank,<br>
-  CBU: 0170023744000061531611
-</div>
-
-<p style="
-  font-size: 0.8rem;
-  color: #777;
-  margin-top: 6px;
-  font-style: italic;
-">
-  Si realizás la transferencia en USD, indicalo al confirmar.
-</p>
-
+      <div class="bank-note">
+        Si realizás la transferencia en USD, indicalo al confirmar.
+      </div>
+    </div>
 
     <div class="modal-actions">
       <button class="cancel" onclick="closeModal()">Cancelar</button>
